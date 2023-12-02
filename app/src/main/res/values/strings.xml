@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Urine Color Detection</string>
+    <string name="check_your_health">Check Your Health</string>
+    <string name="with_uriscan">with UriScan</string>
+    <string name="scan_your_urine_color_and_receive_immediate_feedback_on_your_hydration_and_overall_health_status">Scan your urine color and receive immediate feedback on your hydration and overall health status.</string>
+    <string name="scan_now">Scan Now</string>
+    <string name="about_us">About Us</string>
+    <string name="background">background</string>
 </resources>
