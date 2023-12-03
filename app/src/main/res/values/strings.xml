@@ -23,4 +23,6 @@
     <string name="abdul">ML - Abdul Jabbar Robbani</string>
     <string name="wira">MD - Wira Respati</string>
     <string name="back">Back</string>
+    <string name="permission_granted">Permission request granted</string>
+    <string name="permission_denied">Permission request denied</string>
 </resources>
