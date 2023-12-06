@@ -1,4 +1,4 @@
-package id.project.capstone.helper
+package id.project.capstone.util
 
 import android.content.ContentValues
 import android.content.Context
@@ -9,8 +9,6 @@ import android.provider.MediaStore
 import androidx.core.content.FileProvider
 import id.project.capstone.BuildConfig
 import java.io.File
-import java.io.FileOutputStream
-import java.io.InputStream
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale

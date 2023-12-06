@@ -10,7 +10,7 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import id.project.capstone.databinding.ActivityUrineFormBinding
-import id.project.capstone.helper.getImageUri
+import id.project.capstone.util.getImageUri
 
 class UrineFormActivity : AppCompatActivity() {
 
@@ -47,6 +47,14 @@ class UrineFormActivity : AppCompatActivity() {
             startCamera()
         }
 
+        binding.btnSubmit.setOnClickListener {
+            submit()
+        }
+
+    }
+
+    private fun submit() {
+        TODO("Not yet implemented")
     }
 
     private fun startCamera() {
