@@ -50,7 +50,7 @@ class UrineFormActivity : AppCompatActivity() {
         binding.btnSubmit.setOnClickListener {
             submit()
         }
-// test
+// test lagi
     }
 
     private fun submit() {
