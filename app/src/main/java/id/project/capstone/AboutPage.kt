@@ -13,9 +13,8 @@ class AboutPage : AppCompatActivity() {
         binding = ActivityAboutPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnBack.setOnClickListener{
-            val intent = Intent(this@AboutPage, MainActivity::class.java)
-            startActivity(intent)
+        binding.toolbar.setNavigationOnClickListener {
+            onBackPressed()
         }
 
     }
