@@ -13,5 +13,9 @@ class ResultActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
+        binding.toolbar.setNavigationOnClickListener {
+            onBackPressed()
+        }
+
     }
 }

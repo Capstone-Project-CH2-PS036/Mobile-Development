@@ -1,8 +1,7 @@
 package id.project.capstone
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import id.project.capstone.databinding.ActivityAboutPageBinding
 
 class AboutPage : AppCompatActivity() {

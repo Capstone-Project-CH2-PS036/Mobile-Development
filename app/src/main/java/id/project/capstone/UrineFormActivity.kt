@@ -1,6 +1,7 @@
 package id.project.capstone
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -50,11 +51,11 @@ class UrineFormActivity : AppCompatActivity() {
         binding.btnSubmit.setOnClickListener {
             submit()
         }
-// test lagi
     }
 
     private fun submit() {
-        TODO("Not yet implemented")
+        val intent = Intent(this, ResultActivity::class.java)
+        startActivity(intent)
     }
 
     private fun startCamera() {
