@@ -1,9 +1,12 @@
-package id.project.capstone
+package id.project.capstone.ui.home
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import id.project.capstone.ui.scanhistory.ScanHistoryActivity
+import id.project.capstone.ui.urinform.UrineFormActivity
 import id.project.capstone.databinding.ActivityMainBinding
+import id.project.capstone.ui.about.AboutPage
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -17,6 +20,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, UrineFormActivity::class.java)
             startActivity(intent)
         }
+
+        binding.buttonHistory.setOnClickListener {
+            val intent = Intent(this@MainActivity, ScanHistoryActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.buttonAbout.setOnClickListener {
             val intent = Intent(this@MainActivity, AboutPage::class.java)
             startActivity(intent)

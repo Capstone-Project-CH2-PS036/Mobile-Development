@@ -1,9 +1,10 @@
-package id.project.capstone
+package id.project.capstone.ui.result
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import id.project.capstone.databinding.ActivityResultBinding
+import id.project.capstone.ui.home.MainActivity
 
 class ResultActivity : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package id.project.capstone
+package id.project.capstone.ui.urinform
 
 import android.Manifest
 import android.content.Intent
@@ -10,7 +10,9 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
+import id.project.capstone.R
 import id.project.capstone.databinding.ActivityUrineFormBinding
+import id.project.capstone.ui.result.ResultActivity
 import id.project.capstone.util.getImageUri
 
 class UrineFormActivity : AppCompatActivity() {

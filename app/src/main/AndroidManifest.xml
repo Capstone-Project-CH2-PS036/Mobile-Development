@@ -19,22 +19,23 @@
         android:theme="@style/Theme.UrineColorDetection"
         tools:targetApi="31">
         <activity
-            android:name=".ResultActivity"
+            android:name=".ui.scanhistory.ScanHistoryActivity"
             android:exported="false" />
         <activity
-            android:name=".AboutPage"
+            android:name=".ui.result.ResultActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity2"
+            android:name=".ui.about.AboutPage"
             android:exported="false" />
         <activity
-            android:name=".UrineFormActivity"
+            android:name=".ui.urinform.UrineFormActivity"
             android:exported="false" />
         <activity
-            android:name=".ResultPage"
-            android:exported="false" />
+            android:name=".ui.result.ResultActivity"
+            android:exported="false"
+            tools:ignore="DuplicateActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.home.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
