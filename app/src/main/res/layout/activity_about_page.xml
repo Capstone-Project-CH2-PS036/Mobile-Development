@@ -257,14 +257,4 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_end="330dp" />
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="232dp"
-        android:layout_height="75dp"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/logoUCD" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
