@@ -3,11 +3,11 @@ package id.project.capstone.model
 import androidx.room.*
 import java.io.Serializable
 
-@Dao
-@Entity(tableName = "HistoriDataUrine")
+@Entity(tableName = "saveDataUrine")
 data class resultUrine(
 
     @PrimaryKey
+    @ColumnInfo(name = "id")
     val id: Long,
 
     @ColumnInfo(name = "urine_image")
