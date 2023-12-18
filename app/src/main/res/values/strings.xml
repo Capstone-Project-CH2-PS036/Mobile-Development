@@ -9,8 +9,8 @@
     <string name="how_it_works">How it works</string>
     <string name="benefits">Benefits</string>
     <string name="desc_about">Scan your urine color and receive immediate feedback on your hydration and overall health status.</string>
-    <string name="desc_works">UrineScan uses a proprietary algorithm to analyze the color of your urine. The algorithm is based on a clinical study that found that urine color is a reliable indicator of hydration and overall health.</string>
-    <string name="benefits_0">UrineScan can help you:</string>
+    <string name="desc_works">UCD uses a proprietary algorithm to analyze the color of your urine. The algorithm is based on a clinical study that found that urine color is a reliable indicator of hydration and overall health.</string>
+    <string name="benefits_0">UCD can help you:</string>
     <string name="benefits_1">Stay hydrated and healthy</string>
     <string name="benefits_2">Identify potential health problems early</string>
     <string name="benefits_3">Make informed decisions about your health</string>

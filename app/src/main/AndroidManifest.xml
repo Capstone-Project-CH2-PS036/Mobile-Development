@@ -19,6 +19,9 @@
         android:theme="@style/Theme.UrineColorDetection"
         tools:targetApi="31">
         <activity
+            android:name=".ui.detail.DetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.scanhistory.ScanHistoryActivity"
             android:exported="false" />
         <activity

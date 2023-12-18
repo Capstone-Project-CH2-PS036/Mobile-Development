@@ -32,7 +32,7 @@
             android:background="@android:color/transparent"
             android:textStyle="bold"
             app:navigationIcon="@drawable/ic_back"
-            app:title="Urine Form"
+            app:title="UDC Form"
             app:titleTextColor="@color/primary" />
 
     </com.google.android.material.appbar.AppBarLayout>
