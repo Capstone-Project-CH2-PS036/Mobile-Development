@@ -37,10 +37,12 @@ class ScanHistoryActivity : AppCompatActivity() {
         }
 
         historyAdapter.setOnItemClickListener { history ->
-            val intent = Intent(this, ResultActivity::class.java)
+            val intent = Intent(this, DetailActivity::class.java)
             intent.putExtra("id", history.id)
             intent.putExtra("image", history.image)
             intent.putExtra("color", history.color)
+            intent.putExtra("description",history.dataUrine)
+            intent.putExtra("time",history.timestamp)
             startActivity(intent)
         }
 
