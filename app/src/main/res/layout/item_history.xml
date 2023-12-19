@@ -5,28 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="16dp"
-    app:cardElevation="4dp"
-    >
+    app:cardElevation="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp">
-<ImageView
-    android:id="@+id/image_history"
-    android:layout_width="100dp"
-    android:layout_height="100dp"
-    android:src="@drawable/ic_place_holder"
-    tools:ignore="MissingConstraints" />
+
+        <ImageView
+            android:id="@+id/image_history"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_place_holder"
+            tools:ignore="MissingConstraints"
+            android:contentDescription="Image History" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/urine_color"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:text="@string/urine_color"
-            android:textStyle="bold"
             android:textSize="24sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/image_history"
             app:layout_constraintTop_toTopOf="@+id/image_history" />
 
@@ -38,7 +39,7 @@
             android:text="@string/_1_january_2024"
             android:textSize="18sp"
             app:layout_constraintStart_toEndOf="@+id/image_history"
-            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintTop_toBottomOf="@+id/urine_color"
             tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

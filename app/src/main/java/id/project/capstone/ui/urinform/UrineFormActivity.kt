@@ -60,7 +60,11 @@ class UrineFormActivity : AppCompatActivity() {
     private fun submit() {
         val intent = Intent(this, ResultActivity::class.java)
         val descriptionText = binding.edAddDescription.text.toString()
+        currentImageUri?.let {
+            intent.putExtra("image", it.toString())
+        }
         intent.putExtra("description", descriptionText)
+
         startActivity(intent)
     }
 

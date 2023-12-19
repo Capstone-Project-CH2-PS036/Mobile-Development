@@ -77,7 +77,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Your Urine is {API_Result}"
+            android:text="Your Urine is Yellow"
             android:textStyle="bold"
             android:paddingStart="16dp"
             android:paddingTop="8dp"
@@ -88,16 +88,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingStart="16dp"
-            android:paddingTop="32dp"
+            android:paddingTop="36dp"
             android:textSize="18sp"
-            android:text="Penjelasan tentang warna urine {API_Result}"
+            android:text="The yellow color of urine is usually normal and is caused by a urine pigment called urobilin. However, a very dark yellow or brownish yellow color can indicate dehydration. Make sure to drink enough water."
             />
         <TextView
             android:id="@+id/description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingStart="16dp"
-            android:paddingTop="90dp"
+            android:paddingTop="170dp"
             android:textSize="18sp"
             android:text="Describe Your Urine"
             />

@@ -1,19 +1,24 @@
 package id.project.capstone.data.source.local
 
+import android.os.Parcelable
 import androidx.room.*
-import java.io.Serializable
+import kotlinx.parcelize.Parcelize
 
 @Entity(tableName = "saveDataUrine")
-data class resultUrine(
+@Parcelize
+data class ResultUrineEntity(
 
     @PrimaryKey
     @ColumnInfo(name = "id")
     val id: Long,
 
     @ColumnInfo(name = "urine_image")
-    val image: String,
+    val image: String?,
+
+    @ColumnInfo(name = "color")
+    val color: String?,
 
     @ColumnInfo(name = "result_data")
-    val dataUrine: String
+    val dataUrine: String?
 
-): Serializable
+): Parcelable

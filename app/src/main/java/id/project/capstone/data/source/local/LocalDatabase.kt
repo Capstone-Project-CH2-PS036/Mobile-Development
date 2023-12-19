@@ -6,28 +6,29 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 @Database(
-    entities = [resultUrine::class],
+    entities = [ResultUrineEntity::class],
     version = 1,
     exportSchema = false
 )
 
 abstract class LocalDatabase : RoomDatabase() {
+    abstract fun resultDao(): ResultDao
     companion object {
-        var INSTANCE: LocalDatabase? = null
 
-        fun getDatabase(context: Context): LocalDatabase? {
-            if (INSTANCE == null) {
-                synchronized(LocalDatabase::class) {
-                    INSTANCE = Room.databaseBuilder(
-                        context.applicationContext,
-                        LocalDatabase::class.java,
-                        "result database"
-                    ).build()
+        @Volatile
+        private var INSTANCE: LocalDatabase? = null
+
+        @JvmStatic
+        fun getInstance(context: Context): LocalDatabase{
+            if (INSTANCE == null){
+                synchronized(LocalDatabase::class.java){
+                    INSTANCE = Room.databaseBuilder(context.applicationContext,
+                        LocalDatabase::class.java,"favorite_user_db").build()
                 }
             }
-            return INSTANCE
+            return INSTANCE as LocalDatabase
         }
     }
 
-    abstract fun saveDao(): saveResult
+
 }
