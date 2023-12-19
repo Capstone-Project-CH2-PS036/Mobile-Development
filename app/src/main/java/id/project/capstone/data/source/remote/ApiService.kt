@@ -8,11 +8,10 @@ import retrofit2.http.Part
 
 interface ApiService {
 
-    @Multipart
-    @POST("stories")
-    suspend fun scanUrine(
-        @Part file: MultipartBody.Part,
-        @Part("description") description: RequestBody,
-    ): ResultResponse
+//    @Multipart
+//    @POST("stories")
+//    suspend fun scanUrine(
+//        @Part file: MultipartBody.Part,
+//    ): ResultResponse
 
 }

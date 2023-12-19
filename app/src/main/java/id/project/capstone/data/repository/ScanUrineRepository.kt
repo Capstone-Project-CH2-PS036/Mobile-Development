@@ -12,25 +12,25 @@ import retrofit2.HttpException
 import java.io.File
 
 class ScanUrineRepository(private val apiService: ApiService) {
-
-    fun scanUrine(imageFile: File, description: String) = liveData {
-        emit(MyResult.Loading)
-        val requestBody = description.toRequestBody("text/plain".toMediaType())
-        val requestImageFile = imageFile.asRequestBody("image/jpeg".toMediaType())
-        val multipartBody = MultipartBody.Part.createFormData(
-            "photo",
-            imageFile.name,
-            requestImageFile
-        )
-        try {
-            val successResponse = apiService.scanUrine(multipartBody, requestBody)
-            emit(MyResult.Success(successResponse))
-        } catch (e: HttpException) {
-            val errorBody = e.response()?.errorBody()?.string()
-            val errorResponse = Gson().fromJson(errorBody, ResultResponse::class.java)
-            emit(errorResponse.message?.let { MyResult.Error(it) })
-        }
-
-    }
+//
+//    fun scanUrine(imageFile: File, description: String) = liveData {
+//        emit(MyResult.Loading)
+//        val requestBody = description.toRequestBody("text/plain".toMediaType())
+//        val requestImageFile = imageFile.asRequestBody("image/jpeg".toMediaType())
+//        val multipartBody = MultipartBody.Part.createFormData(
+//            "photo",
+//            imageFile.name,
+//            requestImageFile
+//        )
+//        try {
+//            val successResponse = apiService.scanUrine(multipartBody, requestBody)
+//            emit(MyResult.Success(successResponse))
+//        } catch (e: HttpException) {
+//            val errorBody = e.response()?.errorBody()?.string()
+//            val errorResponse = Gson().fromJson(errorBody, ResultResponse::class.java)
+//            emit(errorResponse.message?.let { MyResult.Error(it) })
+//        }
+//
+//    }
 
 }

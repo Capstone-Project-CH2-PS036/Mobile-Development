@@ -53,10 +53,14 @@ class UrineFormActivity : AppCompatActivity() {
         binding.btnSubmit.setOnClickListener {
             submit()
         }
+
+
     }
 
     private fun submit() {
         val intent = Intent(this, ResultActivity::class.java)
+        val descriptionText = binding.edAddDescription.text.toString()
+        intent.putExtra("description", descriptionText)
         startActivity(intent)
     }
 
