@@ -43,10 +43,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/yellow"
+            android:background="@color/orange"
             android:gravity="center_vertical|center_horizontal"
-            android:text="Yellow"
-            android:textColor="@color/black"
+            android:text="Orange"
+            android:textColor="@color/white"
             android:textSize="36sp"
             android:textStyle="bold" />
 
@@ -67,19 +67,25 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="16dp"
+            android:text="Your Urine is Orange"
+            android:textStyle="bold"
             android:paddingTop="8dp"
-            android:text="Your Urine is {API_Result}"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:justificationMode="inter_word"
+            />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="36dp"
             android:paddingStart="16dp"
-            android:paddingTop="32dp"
-            android:text="Penjelasan tentang warna urine {API_Result}"
-            android:textSize="18sp" />
+            android:paddingEnd="16dp"
+            android:textSize="18sp"
+            android:justificationMode="inter_word"
+            android:text="The orange color of urine may be caused by dehydration or consuming vitamin B complex. However, if orange continues to appear for no apparent reason, it could indicate a problem with the liver or bile ducts. Check with your doctor for further evaluation."
+            />
 
     </androidx.cardview.widget.CardView>
 

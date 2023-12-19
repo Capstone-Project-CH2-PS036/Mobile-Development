@@ -31,6 +31,7 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@android:color/transparent"
             android:textStyle="bold"
+            app:titleCentered="true"
             app:navigationIcon="@drawable/ic_back"
             app:title="UDC Form"
             app:titleTextColor="@color/primary" />
