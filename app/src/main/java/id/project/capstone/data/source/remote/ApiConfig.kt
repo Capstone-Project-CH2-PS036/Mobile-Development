@@ -1,4 +1,4 @@
-package id.project.capstone.api
+package id.project.capstone.data.source.remote
 
 import id.project.capstone.BuildConfig
 import okhttp3.OkHttpClient
@@ -6,9 +6,9 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class ApiClient {
+class ApiConfig {
     companion object {
-        fun getApi(): api {
+        fun getApi(): ApiService {
             val loggingInterceptor = if(BuildConfig.DEBUG) {
                 HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
             } else {
@@ -24,7 +24,7 @@ class ApiClient {
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()
-            return retrofit.create(api::class.java)
+            return retrofit.create(ApiService::class.java)
         }
     }
 }

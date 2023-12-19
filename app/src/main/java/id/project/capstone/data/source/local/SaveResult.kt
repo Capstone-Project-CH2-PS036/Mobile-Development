@@ -1,9 +1,10 @@
-package id.project.capstone.model
+package id.project.capstone.data.source.local
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
+import id.project.capstone.data.source.local.resultUrine
 
 @Dao
 interface saveResult {

@@ -1,4 +1,4 @@
-package id.project.capstone.model
+package id.project.capstone.data.source.local
 
 import android.content.Context
 import androidx.room.Database

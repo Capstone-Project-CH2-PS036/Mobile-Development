@@ -1,4 +1,4 @@
-package id.project.capstone.model
+package id.project.capstone.data.source.local
 
 import androidx.room.*
 import java.io.Serializable
