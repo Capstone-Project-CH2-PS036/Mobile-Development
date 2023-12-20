@@ -3,19 +3,11 @@ package id.project.capstone.ui.detail
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import id.project.capstone.R
-import id.project.capstone.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityDetailBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityDetailBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        binding.toolbar.setOnClickListener {
-            onBackPressed()
-        }
+        setContentView(R.layout.activity_detail)
 
 
         val id = intent.getIntExtra("id",0)

@@ -8,6 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import id.project.capstone.data.source.local.ResultUrineEntity
 import id.project.capstone.databinding.ItemHistoryBinding
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class ScanHistoryAdapter :
     ListAdapter<ResultUrineEntity, ScanHistoryAdapter.ViewHolder>(FavoriteUserDiffCallback()) {
@@ -36,10 +39,17 @@ class ScanHistoryAdapter :
             binding.urineColor.text = result.color
             Glide.with(itemView.context).load(result.image).into(binding.imageHistory)
 
+            val formattedTimestamp = formatTimestamp(result.timestamp)
+            binding.tanggalScan.text = formattedTimestamp
 
             itemView.setOnClickListener {
                 onItemClickListener?.invoke(result)
             }
+        }
+        private fun formatTimestamp(timestamp: Long): String {
+            val sdf = SimpleDateFormat("dd-MMM-yyyy HH:mm:ss", Locale.getDefault())
+            val date = Date(timestamp)
+            return sdf.format(date)
         }
     }
 }

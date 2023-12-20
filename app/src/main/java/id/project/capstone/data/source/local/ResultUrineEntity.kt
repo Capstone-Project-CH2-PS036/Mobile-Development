@@ -19,6 +19,8 @@ data class ResultUrineEntity(
     val color: String?,
 
     @ColumnInfo(name = "result_data")
-    val dataUrine: String?
+    val dataUrine: String?,
 
+    @ColumnInfo(name = "time_stamp")
+    val timestamp: Long = System.currentTimeMillis()
 ): Parcelable

@@ -41,6 +41,8 @@ class ScanHistoryActivity : AppCompatActivity() {
             intent.putExtra("id", history.id)
             intent.putExtra("image", history.image)
             intent.putExtra("color", history.color)
+            intent.putExtra("description",history.dataUrine)
+            intent.putExtra("time",history.timestamp)
             startActivity(intent)
         }
 

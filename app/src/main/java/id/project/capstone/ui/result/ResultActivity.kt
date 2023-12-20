@@ -22,7 +22,7 @@ class ResultActivity : AppCompatActivity() {
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        resultViewModel = ViewModelProvider(this).get(ResultViewModel::class.java)
+        resultViewModel = ViewModelProvider(this)[ResultViewModel::class.java]
 
         binding.toolbar.setNavigationOnClickListener {
             navigateToMain()
@@ -33,7 +33,7 @@ class ResultActivity : AppCompatActivity() {
         binding.description.text = descriptionText
 
         binding.btnSave.setOnClickListener {
-            val id: Long = 4
+            val id: Long = 2
             val image = currentImageUri.toString()
             val color = "Yellow"
             val dataUrine ="The yellow color of urine is usually normal and is caused by a urine pigment called urobilin. However, a very dark yellow or brownish yellow color can indicate dehydration. Make sure to drink enough water."
