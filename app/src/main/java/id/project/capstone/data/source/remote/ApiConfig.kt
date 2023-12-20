@@ -20,10 +20,10 @@ class ApiConfig {
             }
             val client = OkHttpClient.Builder()
                 .addInterceptor(loggingInterceptor)
-                .addInterceptor(authInterceptor)
+//                .addInterceptor(authInterceptor)
                 .build()
             val retrofit = Retrofit.Builder()
-                .baseUrl("http://127.0.0.1:8000/")
+                .baseUrl("http://34.128.118.210:8000/")
 //                Ubah lagi baseUrl nnti kalau udah di deploy ke GCP
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)

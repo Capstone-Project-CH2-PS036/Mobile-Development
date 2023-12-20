@@ -37,6 +37,7 @@ class ResultActivity : AppCompatActivity() {
             val image = currentImageUri.toString()
             val color = "Yellow"
             val dataUrine ="The yellow color of urine is usually normal and is caused by a urine pigment called urobilin. However, a very dark yellow or brownish yellow color can indicate dehydration. Make sure to drink enough water."
+
             if (!isFavorite) {
                 isFavorite = true
                 binding.btnSave.setImageResource(R.drawable.baseline_bookmark_filled_24)
