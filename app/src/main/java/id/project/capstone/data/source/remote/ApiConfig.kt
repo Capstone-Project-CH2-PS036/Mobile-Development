@@ -24,6 +24,7 @@ class ApiConfig {
                 .build()
             val retrofit = Retrofit.Builder()
                 .baseUrl("http://127.0.0.1:8000/")
+//                Ubah lagi baseUrl nnti kalau udah di deploy ke GCP
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()
