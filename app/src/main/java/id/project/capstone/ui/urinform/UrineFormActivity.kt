@@ -61,7 +61,14 @@ class UrineFormActivity : AppCompatActivity() {
         }
 
         binding.btnSubmit.setOnClickListener {
-            uploadImage()
+
+
+            if (currentImageUri !== null){
+                uploadImage()
+
+            } else{
+                showToast("you must scan the image")
+            }
         }
 
 
@@ -82,10 +89,7 @@ class UrineFormActivity : AppCompatActivity() {
                             val color = result.data.body()?.urineColor?.modelPrediction
                             val disease = result.data.body()?.diseaseDescription.toString()
                             val intent = Intent(this, ResultActivity::class.java)
-                            if (color != null) {
-                                Log.d("Response Test",color)
-                            }
-                            Log.d("Response Test",disease)
+
                             val descriptionText = binding.edAddDescription.text.toString()
                             currentImageUri?.let {
                                 intent.putExtra("image", it.toString())
@@ -117,17 +121,7 @@ class UrineFormActivity : AppCompatActivity() {
         binding.progressbarUpload.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
 
-    private fun submit() {
-        uploadImage()
-        val intent = Intent(this, ResultActivity::class.java)
-//        val descriptionText = binding.edAddDescription.text.toString()
-//        currentImageUri?.let {
-//            intent.putExtra("image", it.toString())
-//        }
-//        intent.putExtra("description", descriptionText)
-//
-        startActivity(intent)
-    }
+
 
     private fun startCamera() {
         currentImageUri = getImageUri(this)

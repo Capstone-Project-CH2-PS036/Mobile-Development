@@ -19,14 +19,3 @@ data class Prediction(
     @SerializedName("filename")
     val predictionFilename: String
 )
-data class ResponseColor(
-
-    @field:SerializedName("filename")
-    val filename: String? = null,
-
-    @field:SerializedName("model-prediction-confidence-score")
-    val modelPredictionConfidenceScore: Int? = null,
-
-    @field:SerializedName("model-prediction")
-    val modelPrediction: String? = null
-)

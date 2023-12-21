@@ -1,7 +1,5 @@
 package id.project.capstone.data.source.remote
 
-import id.project.capstone.BuildConfig
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -18,7 +16,6 @@ class ApiConfig {
 
             val retrofit = Retrofit.Builder()
                 .baseUrl("http://34.128.118.210:8000/")
-                // Ubah lagi baseUrl nnti kalau udah di deploy ke GCP
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()

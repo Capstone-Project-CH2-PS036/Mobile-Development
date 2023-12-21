@@ -4,9 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import id.project.capstone.data.repository.ScanResultHistoryRepository
-import id.project.capstone.data.repository.ScanUrineRepository
 import id.project.capstone.data.source.local.ResultUrineEntity
-import id.project.capstone.data.source.remote.ApiConfig
 import kotlinx.coroutines.launch
 
 class ResultViewModel(application: Application) : AndroidViewModel(application) {

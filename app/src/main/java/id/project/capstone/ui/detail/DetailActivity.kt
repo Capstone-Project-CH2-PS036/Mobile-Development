@@ -8,7 +8,6 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import id.project.capstone.R
 import id.project.capstone.databinding.ActivityDetailBinding
-import id.project.capstone.ui.home.MainActivity
 import id.project.capstone.ui.result.ResultViewModel
 import id.project.capstone.ui.scanhistory.ScanHistoryActivity
 import java.text.SimpleDateFormat

@@ -1,16 +1,15 @@
 package id.project.capstone.ui.scanhistory
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import id.project.capstone.databinding.ActivityMainBinding
 import id.project.capstone.databinding.ActivityScanHistoryBinding
 import id.project.capstone.ui.adapter.ScanHistoryAdapter
 import id.project.capstone.ui.detail.DetailActivity
-import id.project.capstone.ui.result.ResultActivity
+import id.project.capstone.ui.home.MainActivity
 
 class ScanHistoryActivity : AppCompatActivity() {
 
@@ -23,7 +22,8 @@ class ScanHistoryActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.toolbar.setOnClickListener {
-            onBackPressed()
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
         }
 
         binding.rvHistory.layoutManager = LinearLayoutManager(this)
@@ -47,9 +47,5 @@ class ScanHistoryActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-    }
-
-    override fun onBackPressed() {
-        super.onBackPressed()
     }
 }
