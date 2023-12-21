@@ -58,19 +58,18 @@ class ResultActivity : AppCompatActivity() {
         binding.description.text = descriptionText
 
         binding.btnSave.setOnClickListener {
-            val id: Long = 2
             val image = currentImageUri.toString()
-            val color = "Yellow"
-            val dataUrine ="The yellow color of urine is usually normal and is caused by a urine pigment called urobilin. However, a very dark yellow or brownish yellow color can indicate dehydration. Make sure to drink enough water."
-
             if (!isFavorite) {
                 isFavorite = true
                 binding.btnSave.setImageResource(R.drawable.baseline_bookmark_filled_24)
-                resultViewModel.insertResult(id,image,color,dataUrine)
-            } else {
-                isFavorite = false
-                binding.btnSave.setImageResource(R.drawable.baseline_bookmark_border_24)
-
+                color?.let { it1 ->
+                    disease?.let { it2 ->
+                        resultViewModel.insertResult(
+                            image, it1,
+                            it2
+                        )
+                    }
+                }
             }
         }
 

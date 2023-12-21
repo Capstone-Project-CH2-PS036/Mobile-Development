@@ -13,9 +13,9 @@ interface ResultDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insertResult(saveRes: ResultUrineEntity)
 
-    @Query("SELECT * FROM saveDataUrine")
+    @Query("SELECT * FROM saveDataUrine ORDER BY time_stamp DESC")
     fun getAllResult(): LiveData<List<ResultUrineEntity>>
 
-    @Delete
-    fun removeResult(id: ResultUrineEntity)
+    @Query("DELETE FROM saveDataUrine WHERE id = :id")
+    fun removeResult(id: Long)
 }

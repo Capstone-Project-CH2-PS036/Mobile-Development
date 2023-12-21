@@ -41,6 +41,7 @@
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
 
         <TextView
+            android:id="@+id/color_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/jingga"
@@ -91,10 +92,10 @@
 
     </androidx.cardview.widget.CardView>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btn_save_detail"
+        android:id="@+id/btn_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/baseline_bookmark_border_24"
+        android:src="@drawable/baseline_auto_delete_24"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -8,9 +8,9 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class ResultUrineEntity(
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    val id: Long,
+    val id: Long = 0,
 
     @ColumnInfo(name = "urine_image")
     val image: String?,

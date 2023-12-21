@@ -11,22 +11,18 @@ import kotlinx.coroutines.launch
 
 class ResultViewModel(application: Application) : AndroidViewModel(application) {
     private val repository: ScanResultHistoryRepository = ScanResultHistoryRepository(application)
-    private val scanUrineRepository: ScanUrineRepository = ScanUrineRepository(ApiConfig.getApiService())
-    fun getResultHistory(score: Int?, classes: Int?) = scanUrineRepository.getResultColor(score, classes)
 
-    fun insertResult(id: Long, image: String, color: String, dataUrine: String) {
+
+    fun insertResult( image: String, color: String, dataUrine: String) {
         viewModelScope.launch {
-            val history = ResultUrineEntity(id, image, color, dataUrine)
+            val history = ResultUrineEntity(image = image, color = color, dataUrine = dataUrine)
             repository.insertResult(history)
         }
     }
 
-    fun deleteResult(id: Long, image: String, color: String,dataUrine: String) {
+    fun deleteResult(id: Long) {
         viewModelScope.launch {
-            val history = ResultUrineEntity(id, image, color,dataUrine)
-            repository.deleteResult(history)
+            repository.deleteResult(id)
         }
     }
-
-
 }

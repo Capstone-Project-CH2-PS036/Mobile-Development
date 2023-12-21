@@ -21,10 +21,10 @@ class ScanResultHistoryRepository(application: Application) {
             favoriteUserDao = db.resultDao()
     }
 
-    fun insertResult(favoriteUser: ResultUrineEntity) {
+    fun insertResult(history: ResultUrineEntity) {
         executorService.execute {
             try {
-                favoriteUserDao.insertResult(favoriteUser)
+                favoriteUserDao.insertResult(history)
                 Log.d(ContentValues.TAG, "Insert Success")
             } catch (e: Exception) {
                 Log.e(ContentValues.TAG, "Insert Error: ${e.message}")
@@ -32,10 +32,10 @@ class ScanResultHistoryRepository(application: Application) {
         }
     }
 
-    fun deleteResult(favorite: ResultUrineEntity) {
+    fun deleteResult(history: Long) {
         executorService.execute {
             try {
-                favoriteUserDao.removeResult(favorite)
+                favoriteUserDao.removeResult(history)
                 Log.d(ContentValues.TAG, "Delete Success")
             } catch (e: Exception) {
                 Log.e(ContentValues.TAG, "Delete Error: ${e.message}")
