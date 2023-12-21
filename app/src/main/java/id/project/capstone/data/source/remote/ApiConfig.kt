@@ -9,25 +9,20 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class ApiConfig {
     companion object {
-        fun getApiService(token: String): ApiService {
+        fun getApiService(): ApiService {
             val loggingInterceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
-            val authInterceptor = Interceptor { chain ->
-                val req = chain.request()
-                val requestHeaders = req.newBuilder()
-                    .addHeader("Authorization", "Bearer $token")
-                    .build()
-                chain.proceed(requestHeaders)
-            }
+
             val client = OkHttpClient.Builder()
                 .addInterceptor(loggingInterceptor)
-                .addInterceptor(authInterceptor)
                 .build()
+
             val retrofit = Retrofit.Builder()
-                .baseUrl("http://127.0.0.1:8000/")
-//                Ubah lagi baseUrl nnti kalau udah di deploy ke GCP
+                .baseUrl("http://34.128.118.210:8000/")
+                // Ubah lagi baseUrl nnti kalau udah di deploy ke GCP
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()
+
             return retrofit.create(ApiService::class.java)
         }
     }
