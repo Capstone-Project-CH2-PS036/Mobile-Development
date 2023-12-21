@@ -4,20 +4,29 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import id.project.capstone.R
+import id.project.capstone.data.source.MyResult
 import id.project.capstone.databinding.ActivityUrineFormBinding
 import id.project.capstone.ui.result.ResultActivity
 import id.project.capstone.util.getImageUri
+import id.project.capstone.util.reduceFileImage
+import id.project.capstone.util.uriToFile
 
 class UrineFormActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityUrineFormBinding
+
+    private val viewModel by viewModels<UrineFormViewModel> {
+        UrineFormViewModelFactory.getInstance(this)
+    }
 
     private var currentImageUri: Uri? = null
 
@@ -32,6 +41,7 @@ class UrineFormActivity : AppCompatActivity() {
         val message = getString(messageResId)
         Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,20 +61,71 @@ class UrineFormActivity : AppCompatActivity() {
         }
 
         binding.btnSubmit.setOnClickListener {
-            submit()
+            uploadImage()
         }
 
 
     }
 
-    private fun submit() {
-        val intent = Intent(this, ResultActivity::class.java)
-        val descriptionText = binding.edAddDescription.text.toString()
-        currentImageUri?.let {
-            intent.putExtra("image", it.toString())
-        }
-        intent.putExtra("description", descriptionText)
+    private fun uploadImage() {
+        currentImageUri?.let { uri ->
+            val imageFile = uriToFile(uri, this).reduceFileImage()
+            viewModel.scanUrine(imageFile).observe(this) { result ->
+                if (result != null) {
+                    when (result) {
+                        is MyResult.Loading -> {
+                            showLoading(true)
+                        }
 
+                        is MyResult.Success -> {
+                            showLoading(false)
+                            val color = result.data.body()?.urineColor?.modelPrediction
+                            val disease = result.data.body()?.diseaseDescription.toString()
+                            val intent = Intent(this, ResultActivity::class.java)
+                            if (color != null) {
+                                Log.d("Response Test",color)
+                            }
+                            Log.d("Response Test",disease)
+                            val descriptionText = binding.edAddDescription.text.toString()
+                            currentImageUri?.let {
+                                intent.putExtra("image", it.toString())
+                            }
+                            intent.putExtra("description", descriptionText)
+                            intent.putExtra("color", color)
+                            intent.putExtra("disease",disease)
+
+
+                            startActivity(intent)
+                        }
+
+                        is MyResult.Error -> {
+                            showToast(result.error)
+                            showLoading(false)
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        binding.progressbarUpload.visibility = if (isLoading) View.VISIBLE else View.GONE
+    }
+
+    private fun submit() {
+        uploadImage()
+        val intent = Intent(this, ResultActivity::class.java)
+//        val descriptionText = binding.edAddDescription.text.toString()
+//        currentImageUri?.let {
+//            intent.putExtra("image", it.toString())
+//        }
+//        intent.putExtra("description", descriptionText)
+//
         startActivity(intent)
     }
 

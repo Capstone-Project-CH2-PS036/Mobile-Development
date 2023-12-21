@@ -51,14 +51,15 @@
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
 
         <TextView
+            android:id="@+id/color_title"
             android:layout_width="330dp"
             android:layout_height="80dp"
-            android:background="@color/yellow"
+            android:background="@color/kuning"
             android:gravity="center_vertical|center_horizontal"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:text="Yellow"
-            android:textColor="@color/white"
+            android:text="color"
+            android:textColor="@color/putih"
             android:textSize="42sp"
             android:textStyle="bold" />
 
@@ -75,6 +76,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView3">
 
         <TextView
+            android:id="@+id/tv_color"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Your Urine is Yellow"
@@ -86,6 +88,7 @@
             />
 
         <TextView
+            android:id="@+id/tv_disease"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="36dp"
@@ -93,7 +96,7 @@
             android:paddingEnd="16dp"
             android:textSize="18sp"
             android:justificationMode="inter_word"
-            android:text="The yellow color of urine is usually normal and is caused by a urine pigment called urobilin. However, a very dark yellow or brownish yellow color can indicate dehydration. Make sure to drink enough water."
+            android:text="disease"
             />
         <TextView
             android:id="@+id/description"

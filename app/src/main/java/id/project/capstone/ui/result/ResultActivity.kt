@@ -1,13 +1,16 @@
 package id.project.capstone.ui.result
 
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import id.project.capstone.R
 import id.project.capstone.databinding.ActivityResultBinding
 import id.project.capstone.ui.home.MainActivity
+import java.util.Locale
 
 class ResultActivity : AppCompatActivity() {
 
@@ -30,6 +33,28 @@ class ResultActivity : AppCompatActivity() {
 
         val descriptionText = intent.getStringExtra("description")
         currentImageUri = intent.getStringExtra("image")?.let { Uri.parse(it) }
+        val color = intent.getStringExtra("color")
+        val disease = intent.getStringExtra("disease")
+
+        val bgColor = color?.toLowerCase(Locale.ROOT)
+
+        val backgroundColor: Drawable? = when (bgColor) {
+            "biru" -> ContextCompat.getDrawable(this, R.color.biru)
+            "coklat" -> ContextCompat.getDrawable(this, R.color.coklat)
+            "hijau" -> ContextCompat.getDrawable(this, R.color.hijau)
+            "hitam" -> ContextCompat.getDrawable(this, R.color.hitam)
+            "jingga" -> ContextCompat.getDrawable(this, R.color.jingga)
+            "kuning" -> ContextCompat.getDrawable(this, R.color.kuning)
+            "merah" -> ContextCompat.getDrawable(this, R.color.merah)
+            "putih" -> ContextCompat.getDrawable(this, R.color.putih)
+            else -> ContextCompat.getDrawable(this, R.color.kuning)
+        }
+
+
+        binding.colorTitle.text = color
+        binding.colorTitle.background = backgroundColor
+        binding.tvColor.text = "Your Urine Color is "+color
+        binding.tvDisease.text = disease
         binding.description.text = descriptionText
 
         binding.btnSave.setOnClickListener {

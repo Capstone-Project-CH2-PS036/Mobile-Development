@@ -31,6 +31,7 @@ class ScanHistoryActivity : AppCompatActivity() {
         binding.rvHistory.adapter = historyAdapter
 
         historyViewModel = ViewModelProvider(this)[ScanResultHistoryViewModel::class.java]
+
         historyViewModel.getAllResultHistory().observe(this) { history ->
             historyAdapter.submitList(history)
             binding.progressbarHistory.visibility = View.GONE

@@ -1,8 +1,10 @@
 package id.project.capstone.data.source.remote
 
-import id.project.capstone.data.source.local.ResponseColor
-import id.project.capstone.data.source.local.UploadResponse
+import id.project.capstone.data.source.MyResult
+import id.project.capstone.data.source.remote.response.ResponseColor
+import id.project.capstone.data.source.remote.response.UploadResponse
 import okhttp3.MultipartBody
+import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Multipart
 import retrofit2.http.POST
@@ -15,12 +17,12 @@ interface ApiService {
     @POST("upload")
     suspend fun scanUrine(
         @Part file: MultipartBody.Part,
-    ): UploadResponse
+    ): Response<UploadResponse>
 
     @GET("predict")
     suspend fun getResultColor(
         @Query("model-prediction-confidence-score") score: Int? = null,
         @Query("model-prediction") classes: Int? = null,
-    ): ResponseColor
+    ): Response<ResponseColor>
 
 }

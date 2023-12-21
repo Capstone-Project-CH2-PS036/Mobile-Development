@@ -55,7 +55,7 @@
             android:id="@+id/img_preview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white"
+            android:background="@color/putih"
             app:srcCompat="@drawable/ic_place_holder"
             tools:ignore="MissingConstraints" />
 
@@ -121,5 +121,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView2"
         tools:ignore="MissingConstraints" />
+
+    <ProgressBar
+        android:id="@+id/progressbar_upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_submit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
