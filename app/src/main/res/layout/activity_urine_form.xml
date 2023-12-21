@@ -88,8 +88,8 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:gravity="center_horizontal|center_vertical"
-            android:text="Have another issue about your urine?"
-            android:textSize="18sp" />
+            android:text="Have symptoms experienced your urine?"
+            android:textSize="16sp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -116,7 +116,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Submit"
+        android:text="@string/submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView2"

@@ -42,11 +42,11 @@ class ResultActivity : AppCompatActivity() {
             "biru" -> ContextCompat.getDrawable(this, R.color.biru)
             "coklat" -> ContextCompat.getDrawable(this, R.color.coklat)
             "hijau" -> ContextCompat.getDrawable(this, R.color.hijau)
-            "hitam" -> ContextCompat.getDrawable(this, R.color.hitam)
+            "hitam" -> ContextCompat.getDrawable(this, R.color.black_in)
             "jingga" -> ContextCompat.getDrawable(this, R.color.jingga)
             "kuning" -> ContextCompat.getDrawable(this, R.color.kuning)
             "merah" -> ContextCompat.getDrawable(this, R.color.merah)
-            "putih" -> ContextCompat.getDrawable(this, R.color.putih)
+            "putih" -> ContextCompat.getDrawable(this, R.color.white_in)
             else -> ContextCompat.getDrawable(this, R.color.kuning)
         }
 
